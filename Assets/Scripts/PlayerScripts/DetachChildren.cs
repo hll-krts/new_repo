@@ -5,13 +5,13 @@ using UnityEngine;
 public class DetachChildren : MonoBehaviour
 {
     public bool isDead = false, isGhost = true;
-    public GameObject childObject;
+    public GameObject childObject, ghostSprite;
     // Start is called before the first frame update
     void Start()
     {
-        if (transform.childCount != 0)
+        if (transform.childCount <= 1)
         {
-            childObject = transform.GetChild(0).gameObject;
+            childObject = null;
         }
     }
 
@@ -19,7 +19,7 @@ public class DetachChildren : MonoBehaviour
     void Update()
     {
         /* dies */
-        GetComponent<MeshRenderer>().enabled = isGhost;
+        ghostSprite.SetActive(isGhost);
     }
 
     public void YeetTheChild()
@@ -35,7 +35,7 @@ public class DetachChildren : MonoBehaviour
     {
         if (childObject != null)
         {
-            childObject.GetComponent<BossScript>().ReturnToOrigin();
+            YeetTheChild();
         }
         gO.transform.parent = this.gameObject.transform;
         gO.transform.position = this.transform.position;
