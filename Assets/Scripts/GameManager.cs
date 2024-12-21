@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _pausee.gameObject.SetActive(false);
         BossPickCanvasA();
         detachChildren = GameObject.FindFirstObjectByType<DetachChildren>();
 
@@ -141,12 +142,14 @@ public class GameManager : MonoBehaviour
     {
         bossPickCanvas.gameObject.SetActive(true);
         _HUD.gameObject.SetActive(false);
+        _pausee.gameObject.SetActive(false);
         Time.timeScale = 0f;
     }
     public void BossPickCanvasD()
     {
         bossPickCanvas.gameObject.SetActive(false);
         _HUD.gameObject.SetActive(true);
+        _pausee.gameObject.SetActive(false);
         Time.timeScale = 1.0f;
     }
 

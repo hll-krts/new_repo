@@ -91,18 +91,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MinionHit(float damage)
+    public void MinionHit()
     {
-        _hitLife-= damage;
+        //_hitLife-= damage;
         if (_hitLife <= 0)
         {
             detachChildren.isDead = true;
             gameManager.GameOver();
         }
     }
-    public void BossHit(float damage)
+    public void BossHit()
     {
-        _hitLife-=damage;
+        //_hitLife-=damage;
         if (_hitLife <= 0)
         {
             detachChildren.isGhost = true;
