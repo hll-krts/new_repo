@@ -51,17 +51,13 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 128
-  gridWorldSize: {x: 100, y: 100}
+  gridWorldSize: {x: 58, y: 32}
   nodeRadius: 0.5
   walkableRegions:
   - terrainMask:
       serializedVersion: 2
       m_Bits: 64
     terrainPenalty: 0
-  - terrainMask:
-      serializedVersion: 2
-      m_Bits: 16
-    terrainPenalty: 5
   obstacleProximityPenalty: 10
 --- !u!114 &6970929865501007607
 MonoBehaviour:
@@ -100,10 +96,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detachChildren: {fileID: 0}
-  bossAObj: {fileID: 0}
-  bossBObj: {fileID: 0}
-  bossCObj: {fileID: 0}
-  bossAButton: {fileID: 0}
-  bossBButton: {fileID: 0}
-  bossCButton: {fileID: 0}
+  _bossSoldierObj: {fileID: 0}
+  _bossRamboObj: {fileID: 0}
+  _bossKratosObj: {fileID: 0}
+  _bossSoldierButton: {fileID: 0}
+  _bossRamboButton: {fileID: 0}
+  _bossKratosButton: {fileID: 0}
   bossPickCanvas: {fileID: 0}
+  _HUD: {fileID: 0}
+  _pausee: {fileID: 0}
+  _soldierAvatar: {fileID: 0}
+  _ramboAvatar: {fileID: 0}
+  _kratosAvatar: {fileID: 0}

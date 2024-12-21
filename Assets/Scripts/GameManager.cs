@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public DetachChildren detachChildren;
     public GameObject _bossSoldierObj, _bossRamboObj, _bossKratosObj;
     public Button _bossSoldierButton, _bossRamboButton, _bossKratosButton;
-    public Canvas bossPickCanvas;
+    public Canvas bossPickCanvas, _HUD, _pausee;
+    public Image _soldierAvatar, _ramboAvatar, _kratosAvatar;
     int seconds = 0, minutes = 0;
     // Start is called before the first frame update
     void Start()
@@ -99,6 +102,10 @@ public class GameManager : MonoBehaviour
         _bossRamboButton.gameObject.SetActive(true);
         _bossKratosButton.gameObject.SetActive(true);
 
+        _soldierAvatar.enabled = true;
+        _kratosAvatar.enabled = false;
+        _ramboAvatar.enabled = false;
+
         BossPickCanvasD();
     }
     public void BossRamboButton()
@@ -108,6 +115,10 @@ public class GameManager : MonoBehaviour
         _bossSoldierButton.gameObject.SetActive(true);
         _bossRamboButton.gameObject.SetActive(false);
         _bossKratosButton.gameObject.SetActive(true);
+
+        _soldierAvatar.enabled = false;
+        _kratosAvatar.enabled = false;
+        _ramboAvatar.enabled = true;
 
         BossPickCanvasD();
     }
@@ -119,18 +130,48 @@ public class GameManager : MonoBehaviour
         _bossRamboButton.gameObject.SetActive(true);
         _bossKratosButton.gameObject.SetActive(false);
 
+        _soldierAvatar.enabled = false;
+        _kratosAvatar.enabled = true;
+        _ramboAvatar.enabled = false;
+
         BossPickCanvasD();
     }
 
     public void BossPickCanvasA()
     {
         bossPickCanvas.gameObject.SetActive(true);
+        _HUD.gameObject.SetActive(false);
         Time.timeScale = 0f;
     }
     public void BossPickCanvasD()
     {
         bossPickCanvas.gameObject.SetActive(false);
+        _HUD.gameObject.SetActive(true);
         Time.timeScale = 1.0f;
+    }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (Time.timeScale > 0f)
+            {
+                _pausee.gameObject.SetActive(true);
+                _HUD.gameObject.SetActive(false);
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                _pausee.gameObject.SetActive(false);
+                _HUD.gameObject.SetActive(true);
+                Time.timeScale = 1f;
+            }
+        }
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void GameOver()

@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerInputActionsCustom actionsCustom;
     Vector2 inputVector;
-    public int _hitLife;
+    public float _hitLife, _respawnLives;
     public float _moveSpd;
     private DetachChildren detachChildren;
     GameManager gameManager;
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         _rbody.AddForce(this.transform.forward * inputVector.y * speed, ForceMode.Force);
     }
 
-    public void ADodge(InputAction.CallbackContext context)
+    /*public void ADodge(InputAction.CallbackContext context)
     {
         float dodgeStr = _dodgeStr;
 
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
             _nextDodge = Time.time + _dodgeCD;
         }
 
-    }
+    }*/
 
     public void ASpecialMove(InputAction.CallbackContext context)
     {
@@ -91,23 +91,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MinionHit()
+    public void MinionHit(float damage)
     {
-        _hitLife--;
+        _hitLife-= damage;
         if (_hitLife <= 0)
         {
             detachChildren.isDead = true;
             gameManager.GameOver();
         }
     }
-    public void BossHit()
+    public void BossHit(float damage)
     {
-        _hitLife--;
+        _hitLife-=damage;
         if (_hitLife <= 0)
         {
             detachChildren.isGhost = true;
             detachChildren.YeetTheChild();
             gameManager.BossPickCanvasA();
+            _respawnLives--;
+            if (_respawnLives <= 0)
+            {
+                detachChildren.isDead = true;
+            }
         }
     }
 }
