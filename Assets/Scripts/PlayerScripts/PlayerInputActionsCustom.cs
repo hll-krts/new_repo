@@ -62,6 +62,15 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""5beeee3e-7ea1-441d-8294-9365f5c15d38"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +249,17 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
                     ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c1c9ee4-93ac-4e25-8b96-3412d2fb7fe6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -275,6 +295,7 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
         m_DefaultControls_Fire = m_DefaultControls.FindAction("Fire", throwIfNotFound: true);
         m_DefaultControls_Dodge = m_DefaultControls.FindAction("Dodge", throwIfNotFound: true);
         m_DefaultControls_Special = m_DefaultControls.FindAction("Special", throwIfNotFound: true);
+        m_DefaultControls_Escape = m_DefaultControls.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -340,6 +361,7 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
     private readonly InputAction m_DefaultControls_Fire;
     private readonly InputAction m_DefaultControls_Dodge;
     private readonly InputAction m_DefaultControls_Special;
+    private readonly InputAction m_DefaultControls_Escape;
     public struct DefaultControlsActions
     {
         private @PlayerInputActionsCustom m_Wrapper;
@@ -348,6 +370,7 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
         public InputAction @Fire => m_Wrapper.m_DefaultControls_Fire;
         public InputAction @Dodge => m_Wrapper.m_DefaultControls_Dodge;
         public InputAction @Special => m_Wrapper.m_DefaultControls_Special;
+        public InputAction @Escape => m_Wrapper.m_DefaultControls_Escape;
         public InputActionMap Get() { return m_Wrapper.m_DefaultControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -369,6 +392,9 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
             @Special.started += instance.OnSpecial;
             @Special.performed += instance.OnSpecial;
             @Special.canceled += instance.OnSpecial;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
 
         private void UnregisterCallbacks(IDefaultControlsActions instance)
@@ -385,6 +411,9 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
             @Special.started -= instance.OnSpecial;
             @Special.performed -= instance.OnSpecial;
             @Special.canceled -= instance.OnSpecial;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
 
         public void RemoveCallbacks(IDefaultControlsActions instance)
@@ -426,5 +455,6 @@ public partial class @PlayerInputActionsCustom: IInputActionCollection2, IDispos
         void OnFire(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

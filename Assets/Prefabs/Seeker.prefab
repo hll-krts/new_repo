@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6670067873621518745}
   - component: {fileID: 2540977979363014947}
-  - component: {fileID: 5461621891547112788}
+  - component: {fileID: 4665277233512506534}
   m_Layer: 0
   m_Name: minion
   m_TagString: Untagged
@@ -224,7 +224,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5461621891547112788
+--- !u!114 &4665277233512506534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
