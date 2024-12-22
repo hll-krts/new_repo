@@ -26,6 +26,13 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(Timer());
     }
+    private void Update()
+    {
+        if(minutes >= 5)
+        {
+            Debug.Log("Win");
+        }
+    }
 
     IEnumerator Timer()
     {

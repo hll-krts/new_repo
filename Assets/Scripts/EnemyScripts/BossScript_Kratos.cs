@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossScript_Kratos : BossScript
 {
+    [SerializeField] private GameObject _sopa, _levye, _balyoz, _balta;
     float nextTime = 0;
     public float duration;
     public void Special()
@@ -15,6 +16,16 @@ public class BossScript_Kratos : BossScript
         if (Time.time > nextTime && nextTime != 0)
         {
             nextTime = 0;
+        }
+        if (gameManager.minutes % 1 == 0)
+        {
+            switch (gameManager.minutes)
+            {
+                case 0: _sopa.SetActive(true); break;
+                case 1: _levye.SetActive(true); break;
+                case 3: _balyoz.SetActive(true); break;
+                case 4: _balta.SetActive(true); break;
+            }
         }
     }
 }

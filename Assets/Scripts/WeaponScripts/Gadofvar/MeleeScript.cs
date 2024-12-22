@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class MeleeScript : MonoBehaviour
 {
+    public const string IS_ATTACKING = "IsAttacking";
+
     public GameObject _meleeRange;
     public Transform currentTarget; // Algýlanan hedef
     public MeleeVariables wVars;
+    private bool isAvailableToAttack;
+    public Animator animator;
 
     private void Start()
     {
         wVars.cooldownTimer = 0f;
     }
+
     public void DetectTarget()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, wVars.attackRadius, wVars.targetLayer);
@@ -33,21 +38,24 @@ public class MeleeScript : MonoBehaviour
         if (wVars.isAttacking)
         {
             wVars.attackTime += Time.deltaTime;
+            isAvailableToAttack = true;
             if (wVars.attackTime >= wVars.attackDuration)
             {
-                wVars.attackTime = 0f;
+                isAvailableToAttack = false;
                 wVars.cooldownTimer = Time.time + wVars.attackCooldown;
                 wVars.isAttacking = false;
-                _meleeRange.SetActive(false); 
+                _meleeRange.SetActive(false);
+                wVars.attackTime = 0f;
             }
         }
     }
     public void Attack()
     {
-        if (!wVars.isAttacking)
+        if (!wVars.isAttacking && !isAvailableToAttack)
         {
             _meleeRange.SetActive(true);
             wVars.isAttacking = true;
+            animator.SetTrigger(IS_ATTACKING);
         }
     }
     void OnDrawGizmosSelected()

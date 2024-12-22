@@ -6,11 +6,13 @@ public class SopaScript : MeleeScript
 {
     private void Update()
     {
+        MeleeTimer();
+
         DetectTarget();
-        if(currentTarget != null)
+        if (currentTarget != null)
         {
             RotateTowardsTarget(currentTarget);
-            if(wVars.cooldownTimer < Time.time)
+            if (wVars.cooldownTimer < Time.time)
             {
                 Attack();
             }

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 0
   attackDuration: 0.3
-  attackRadius: 1
+  attackRadius: 2
   attackDamage: 10
   attackCooldown: 3
   attackTime: 0
-  cooldownTimer: 0
+  cooldownTimer: 24.861465
   rotationSpeed: 5
   targetLayer:
     serializedVersion: 2
