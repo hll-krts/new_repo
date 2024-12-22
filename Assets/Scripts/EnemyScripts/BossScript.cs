@@ -6,14 +6,12 @@ public class BossScript : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     public GameObject bossOrigin, player;
     public CommonVariables commonVariables;
-    public WeaponVariables weaponVariables;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         gameManager = GameObject.FindAnyObjectByType<GameManager>();
-        GetComponent<Unit>().speed = commonVariables.bossMovSpd;
     }
 
     private void Update()
@@ -42,12 +40,12 @@ public class BossScript : MonoBehaviour
             ReturnToOrigin();
         }
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        GameObject go = collision.gameObject;
-        if (go.CompareTag("Player"))
+        if (other.CompareTag("PlayerHandGunAmmo"))
         {
-            go.GetComponent<PlayerMovement>().BossHit();
+            GetHit(10);
         }
     }
 }

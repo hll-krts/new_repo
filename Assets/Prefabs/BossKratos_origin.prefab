@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a68b007950b995e4983b290020e45e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -142,7 +142,6 @@ GameObject:
   - component: {fileID: 551057633702056728}
   - component: {fileID: 290145232259027990}
   - component: {fileID: 315969320146785067}
-  - component: {fileID: 2134031033703930986}
   - component: {fileID: 4000591853284828360}
   m_Layer: 0
   m_Name: BossKratos
@@ -240,23 +239,6 @@ CapsuleCollider:
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2134031033703930986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235511322959479042}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f405937fb69e244198911aebaac9bf00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 20
-  turnSpeed: 3
-  turnDst: 5
-  stoppingDst: 5
 --- !u!114 &4000591853284828360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77837878d0b60f54697fd0906cd2966a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   bossOrigin: {fileID: 3868147007001899006}
+  player: {fileID: 0}
   commonVariables: {fileID: 11400000, guid: 32d162d42030ea140b702e7f60d9b536, type: 2}
-  weaponVariables: {fileID: 0}
   duration: 5

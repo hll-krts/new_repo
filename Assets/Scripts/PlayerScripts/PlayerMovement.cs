@@ -91,18 +91,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MinionHit()
+    public void MinionHit(float damage)
     {
-        //_hitLife-= damage;
+        _hitLife-= damage;
         if (_hitLife <= 0)
         {
             detachChildren.isDead = true;
             gameManager.GameOver();
         }
     }
-    public void BossHit()
+    public void BossHit(float damage)
     {
-        //_hitLife-=damage;
+        _hitLife-=damage;
         if (_hitLife <= 0)
         {
             detachChildren.isGhost = true;
@@ -113,6 +113,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 detachChildren.isDead = true;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyHandGunAmmo"))
+        {
+            BossHit(10);
         }
     }
 }

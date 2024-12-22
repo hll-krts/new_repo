@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class MinionScript : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         GameObject gameObject = collision.gameObject;
         if (gameObject.CompareTag("Player"))
         {
             gameObject.GetComponent<PlayerMovement>().MinionHit();
+        }
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerHandGunAmmo"))
+        {
+            Destroy(this.gameObject);
         }
     }
 }

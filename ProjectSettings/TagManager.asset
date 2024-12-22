@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Boss
   - Minions
+  - EnemyHandGunAmmo
+  - PlayerHandGunAmmo
   layers:
   - Default
   - TransparentFX

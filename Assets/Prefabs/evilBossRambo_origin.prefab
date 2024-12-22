@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1165041761238301012}
   - component: {fileID: 2009199071041247920}
-  - component: {fileID: 7156829240451787632}
-  m_Layer: 0
+  - component: {fileID: 3735564020063935403}
+  m_Layer: 8
   m_Name: bombaci
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7156829240451787632
+--- !u!114 &3735564020063935403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,8 +107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114901258461602367}
-  m_Layer: 0
-  m_Name: BossRambo_origin
+  m_Layer: 8
+  m_Name: evilBossRambo_origin
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,9 +142,10 @@ GameObject:
   - component: {fileID: 4249312945531067987}
   - component: {fileID: 5148516182079739545}
   - component: {fileID: 8578429663353636704}
+  - component: {fileID: 5823823095826065122}
   - component: {fileID: 9174115082035719298}
-  m_Layer: 0
-  m_Name: BossRambo
+  m_Layer: 8
+  m_Name: evilBossRambo
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,6 +240,23 @@ CapsuleCollider:
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5823823095826065122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797439448315270308}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405937fb69e244198911aebaac9bf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 20
+  turnSpeed: 3
+  turnDst: 5
+  stoppingDst: 5
 --- !u!114 &9174115082035719298
 MonoBehaviour:
   m_ObjectHideFlags: 0
