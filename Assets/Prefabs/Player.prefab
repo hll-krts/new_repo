@@ -154,8 +154,9 @@ MonoBehaviour:
   _CanDodge: 1
   _dodgeCD: 10
   _dodgeStr: 250
-  _hitLife: 3
-  _respawnLives: 0
+  _hitLife: 90
+  _maxHP: 100
+  _respawnLives: 3
   _moveSpd: 20
 --- !u!114 &4378576351913347443
 MonoBehaviour:

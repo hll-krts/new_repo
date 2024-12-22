@@ -14,13 +14,14 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerInputActionsCustom actionsCustom;
     Vector2 inputVector;
-    public float _hitLife, _respawnLives;
+    public float _hitLife, _maxHP, _respawnLives;
     public float _moveSpd;
     private DetachChildren detachChildren;
     GameManager gameManager;
 
     private void Awake()
     {
+        Restore();
         gameManager = GameObject.FindFirstObjectByType<GameManager>();
         _nextDodge = 0;
         _rbody = GetComponent<Rigidbody>();
@@ -31,8 +32,14 @@ public class PlayerMovement : MonoBehaviour
         actionsCustom.DefaultControls.Enable();
     }
 
+    public void Restore()
+    {
+        _hitLife = _maxHP;
+    }
+
     private void Update()
     {
+        gameManager._healthBar.rectTransform.localScale = new Vector3(_hitLife / _maxHP, 1,1);
         if (Time.time > _nextDodge & !_CanDodge)
         {
             _CanDodge = true;
@@ -109,9 +116,20 @@ public class PlayerMovement : MonoBehaviour
             detachChildren.YeetTheChild();
             gameManager.BossPickCanvasA();
             _respawnLives--;
+
+            switch (_respawnLives)
+            {
+                case 2: gameManager._heart3.enabled = false; break;
+                case 1: gameManager._heart2.enabled = false; break;
+                case 0: gameManager._heart1.enabled = false; break;
+            }
+
+            Restore();
+
             if (_respawnLives <= 0)
             {
                 detachChildren.isDead = true;
+                gameManager.GameOver();
             }
         }
     }

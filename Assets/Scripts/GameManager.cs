@@ -8,11 +8,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public DetachChildren detachChildren;
+    [Header("boss objects")]
     public GameObject _bossSoldierObj, _bossRamboObj, _bossKratosObj, _evilbossSoldierObj, _evilbossRamboObj, _evilbossKratosObj;
+    [Header("buttons")]
     public Button _bossSoldierButton, _bossRamboButton, _bossKratosButton;
+    [Header("canvas")]
     public Canvas bossPickCanvas, _HUD, _pausee;
-    public Image _soldierAvatar, _ramboAvatar, _kratosAvatar;
-    int seconds = 0, minutes = 0;
+    [Header("images")]
+    public Image _soldierAvatar, _ramboAvatar, _kratosAvatar, _healthBar, _heart1, _heart2, _heart3;
+    public int seconds = 0, minutes = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -135,7 +139,7 @@ public class GameManager : MonoBehaviour
         bossPickCanvas.gameObject.SetActive(true);
         _HUD.gameObject.SetActive(false);
         _pausee.gameObject.SetActive(false);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.00000000000000000001f;
     }
     public void BossPickCanvasD()
     {

@@ -99,6 +99,9 @@ MonoBehaviour:
   _bossSoldierObj: {fileID: 0}
   _bossRamboObj: {fileID: 0}
   _bossKratosObj: {fileID: 0}
+  _evilbossSoldierObj: {fileID: 0}
+  _evilbossRamboObj: {fileID: 0}
+  _evilbossKratosObj: {fileID: 0}
   _bossSoldierButton: {fileID: 0}
   _bossRamboButton: {fileID: 0}
   _bossKratosButton: {fileID: 0}
@@ -108,3 +111,9 @@ MonoBehaviour:
   _soldierAvatar: {fileID: 0}
   _ramboAvatar: {fileID: 0}
   _kratosAvatar: {fileID: 0}
+  _healthBar: {fileID: 0}
+  _heart1: {fileID: 0}
+  _heart2: {fileID: 0}
+  _heart3: {fileID: 0}
+  seconds: 0
+  minutes: 0

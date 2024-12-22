@@ -18,7 +18,7 @@ public class MinionSpawner : MonoBehaviour
         while (!_detachChildren.isDead)
         {
             yield return new WaitForSeconds(0.8f);
-            Instantiate(_minion, spawnPoints[Random.Range(0, 5)].transform);
+            Instantiate(_minion, spawnPoints[Random.Range(0, 6)].transform);
         }
     }
 }

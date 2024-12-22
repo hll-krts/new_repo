@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07e4a8e4e272e90438e84a9f3393c233, type: 3}
-  m_Name: PlayerARGunVariables
+  m_Name: PlayerSMGVariables
   m_EditorClassIdentifier: 
-  bulletSpeed: 40
+  bulletSpeed: 30
   spreadAngle: 1
   bulletCount: 1
   burstCount: 1
   rotationSpeed: 5
-  fireRate: 3
+  fireRate: 1.5
   nextFire: 14.140164
-  detectionRadius: 12
+  detectionRadius: 9
   targetLayer:
     serializedVersion: 2
     m_Bits: 256

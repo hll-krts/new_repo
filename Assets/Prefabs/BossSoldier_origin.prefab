@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5299551094827738733}
   m_Layer: 0
   m_Name: BossSoldier_origin
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8467357373746128351
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 7156952334248805580}
   m_Layer: 0
   m_Name: BossSoldier
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,10 +421,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b485829bc063cad4cb5aa977212685a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   sprite: {fileID: 0}
   bossOrigin: {fileID: 1083255554468129245}
   player: {fileID: 0}
   commonVariables: {fileID: 11400000, guid: 1030f817775c5284bb59b3e224aba50f, type: 2}
+  _handgun: {fileID: 1995840023801251492}
+  _shotgun: {fileID: 3897275027315465725}
+  _ar: {fileID: 3273665643539070244}
+  _smg: {fileID: 4535263676846429806}
   duration: 5
 --- !u!1 &3897275027315465725
 GameObject:
@@ -521,10 +526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c0f35d2f560b74289ef877cd2c6d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 8324233704730407050}
+  bulletPrefab: {fileID: 2214511321829829267, guid: 128c8701be2568d4daeed80cbb2d2c2b,
+    type: 3}
   currentTarget: {fileID: 0}
-  wVars: {fileID: 0}
+  wVars: {fileID: 11400000, guid: 94da54a1d97ebfb4bb0e8a12dd858941, type: 2}
 --- !u!1 &5684683284937614055
 GameObject:
   m_ObjectHideFlags: 0

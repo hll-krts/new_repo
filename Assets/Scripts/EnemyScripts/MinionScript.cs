@@ -19,5 +19,9 @@ public class MinionScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        else if (other.CompareTag("PlayerMeleeRange"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

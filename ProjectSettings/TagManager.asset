@@ -8,6 +8,8 @@ TagManager:
   - Minions
   - EnemyHandGunAmmo
   - PlayerHandGunAmmo
+  - EnemyMeleeRange
+  - PlayerMeleeRange
   layers:
   - Default
   - TransparentFX

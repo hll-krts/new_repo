@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07e4a8e4e272e90438e84a9f3393c233, type: 3}
-  m_Name: PlayerShotGunVariables
+  m_Name: PlayerShotgunVariables
   m_EditorClassIdentifier: 
   bulletSpeed: 20
   spreadAngle: 15

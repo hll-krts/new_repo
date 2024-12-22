@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
-    GameManager gameManager;
+    public GameManager gameManager;
     [SerializeField] SpriteRenderer sprite;
     public GameObject bossOrigin, player;
     public CommonVariables commonVariables;
@@ -17,9 +17,7 @@ public class BossScript : MonoBehaviour
     private void Update()
     {
         if (player.transform.position.x < transform.position.x)
-        {
             sprite.flipX = true;
-        }
         else
             sprite.flipX = false;
     }
@@ -29,8 +27,6 @@ public class BossScript : MonoBehaviour
         transform.position = bossOrigin.transform.position;
         transform.parent = bossOrigin.transform;
         commonVariables.RestoreHP();
-        GetComponent<Unit>().enabled = false;
-        GetComponent<CapsuleCollider>().enabled = false;
     }
 
     public void GetHit(float hitDamage)

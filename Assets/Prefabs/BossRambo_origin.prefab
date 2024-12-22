@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1114901258461602367}
   m_Layer: 0
   m_Name: BossRambo_origin
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 9174115082035719298}
   m_Layer: 0
   m_Name: BossRambo
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3636af0686ca9c649b0354516c08e331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   sprite: {fileID: 0}
   bossOrigin: {fileID: 3818659766384460644}
   player: {fileID: 0}
