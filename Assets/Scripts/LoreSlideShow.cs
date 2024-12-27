@@ -22,7 +22,7 @@ public class LoreSlideShow : MonoBehaviour
     {
         if (slideIndex == loreSlides.Length - 1)
         {
-            SceneManager.LoadSceneAsync(0);
+            SceneManager.LoadSceneAsync(2);
         }
         else
         {

@@ -19,12 +19,12 @@ public class BossScript_Kratos : BossScript
         }
         if (gameManager.minutes % 1 == 0)
         {
-            switch (gameManager.minutes)
+            switch (gameManager.seconds)
             {
                 case 0: _sopa.SetActive(true); break;
-                case 1: _levye.SetActive(true); break;
-                case 3: _balyoz.SetActive(true); break;
-                case 4: _balta.SetActive(true); break;
+                case 10: _levye.SetActive(true); break;
+                case 20: _balyoz.SetActive(true); break;
+                case 30: _balta.SetActive(true); break;
             }
         }
     }

@@ -9,13 +9,13 @@ public class GameManager : MonoBehaviour
 {
     public DetachChildren detachChildren;
     [Header("boss objects")]
-    public GameObject _bossSoldierObj, _bossRamboObj, _bossKratosObj, _evilbossSoldierObj, _evilbossRamboObj, _evilbossKratosObj;
+    public GameObject _bossSoldierObj, _bossKratosObj, _evilbossSoldierObj, _evilbossKratosObj;
     [Header("buttons")]
-    public Button _bossSoldierButton, _bossRamboButton, _bossKratosButton;
+    public Button _bossSoldierButton, _bossKratosButton;
     [Header("canvas")]
     public Canvas bossPickCanvas, _HUD, _pausee;
     [Header("images")]
-    public Image _soldierAvatar, _ramboAvatar, _kratosAvatar, _healthBar, _heart1, _heart2, _heart3;
+    public Image _soldierAvatar, _kratosAvatar, _healthBar, _heart1, _heart2, _heart3;
     public int seconds = 0, minutes = 0;
     // Start is called before the first frame update
     void Start()
@@ -43,11 +43,14 @@ public class GameManager : MonoBehaviour
             {
                 seconds = 0;
                 minutes++;
-                SendRandomBoss();
             }
             else
             {
                 seconds++;
+                if(seconds == 30f)
+                {
+                    SendRandomBoss();
+                }
             }
         }
     }
@@ -60,48 +63,30 @@ public class GameManager : MonoBehaviour
         {
             if (gameObject == _bossSoldierObj)
             {
-                _evilbossRamboObj.GetComponent<Unit>().enabled = true;
-                _evilbossRamboObj.GetComponent<CapsuleCollider>().enabled = true;
-                _evilbossKratosObj.GetComponent<Unit>().enabled = false;
-                _evilbossKratosObj.GetComponent<CapsuleCollider>().enabled = false;
-            }
-            else if (gameObject == _bossRamboObj)
-            {
-                _evilbossSoldierObj.GetComponent<Unit>().enabled = true;
-                _evilbossSoldierObj.GetComponent<CapsuleCollider>().enabled = true;
-                _evilbossKratosObj.GetComponent<Unit>().enabled = false;
-                _evilbossKratosObj.GetComponent<CapsuleCollider>().enabled = false;
+                _evilbossKratosObj.GetComponent<Unit>().enabled = true;
+                _evilbossKratosObj.GetComponent<CapsuleCollider>().enabled = true;
+                _evilbossKratosObj.GetComponent<BossScript_Kratos>().enabled = true;
             }
             else if (gameObject == _bossKratosObj)
             {
                 _evilbossSoldierObj.GetComponent<Unit>().enabled = true;
                 _evilbossSoldierObj.GetComponent<CapsuleCollider>().enabled = true;
-                _evilbossRamboObj.GetComponent<Unit>().enabled = false;
-                _evilbossRamboObj.GetComponent<CapsuleCollider>().enabled = false;
+                _evilbossKratosObj.GetComponent<BossScript_Soldier>().enabled = true;
             }
         }
         else
         {
             if (gameObject == _bossSoldierObj)
             {
-                _evilbossRamboObj.GetComponent<Unit>().enabled = false;
-                _evilbossRamboObj.GetComponent<CapsuleCollider>().enabled = false;
                 _evilbossKratosObj.GetComponent<Unit>().enabled = true;
                 _evilbossKratosObj.GetComponent<CapsuleCollider>().enabled = true;
-            }
-            else if (gameObject == _bossRamboObj)
-            {
-                _evilbossSoldierObj.GetComponent<Unit>().enabled = false;
-                _evilbossSoldierObj.GetComponent<CapsuleCollider>().enabled = false;
-                _evilbossKratosObj.GetComponent<Unit>().enabled = true;
-                _evilbossKratosObj.GetComponent<SphereCollider>().enabled = true;
+                _evilbossKratosObj.GetComponent<BossScript_Kratos>().enabled = true;
             }
             else if (gameObject == _bossKratosObj)
             {
-                _evilbossSoldierObj.GetComponent<Unit>().enabled = false;
-                _evilbossSoldierObj.GetComponent<SphereCollider>().enabled = false;
-                _evilbossRamboObj.GetComponent<Unit>().enabled = true;
-                _evilbossRamboObj.GetComponent<SphereCollider>().enabled = true;
+                _evilbossSoldierObj.GetComponent<Unit>().enabled = true;
+                _evilbossSoldierObj.GetComponent<CapsuleCollider>().enabled = true;
+                _evilbossKratosObj.GetComponent<BossScript_Soldier>().enabled = true;
             }
         }
     }
@@ -112,17 +97,6 @@ public class GameManager : MonoBehaviour
 
         _soldierAvatar.enabled = true;
         _kratosAvatar.enabled = false;
-        _ramboAvatar.enabled = false;
-
-        BossPickCanvasD();
-    }
-    public void BossRamboButton()
-    {
-        detachChildren.StealTheChild(_bossRamboObj);
-
-        _soldierAvatar.enabled = false;
-        _kratosAvatar.enabled = false;
-        _ramboAvatar.enabled = true;
 
         BossPickCanvasD();
     }
@@ -132,7 +106,6 @@ public class GameManager : MonoBehaviour
 
         _soldierAvatar.enabled = false;
         _kratosAvatar.enabled = true;
-        _ramboAvatar.enabled = false;
 
         BossPickCanvasD();
     }
@@ -140,7 +113,6 @@ public class GameManager : MonoBehaviour
     public void BossPickCanvasA()
     {
         _bossSoldierButton.gameObject.SetActive(true);
-        _bossRamboButton.gameObject.SetActive(true);
         _bossKratosButton.gameObject.SetActive(true);
 
         bossPickCanvas.gameObject.SetActive(true);
@@ -151,7 +123,6 @@ public class GameManager : MonoBehaviour
     public void BossPickCanvasD()
     {
         _bossSoldierButton.gameObject.SetActive(false);
-        _bossRamboButton.gameObject.SetActive(false);
         _bossKratosButton.gameObject.SetActive(false);
 
         bossPickCanvas.gameObject.SetActive(false);
@@ -186,6 +157,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("deleting system32");
+        SceneManager.LoadScene(3);
     }
 }

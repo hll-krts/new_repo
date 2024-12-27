@@ -10,6 +10,8 @@ TagManager:
   - PlayerHandGunAmmo
   - EnemyMeleeRange
   - PlayerMeleeRange
+  - EnemyBombExplosion
+  - PlayerBombExplosion
   layers:
   - Default
   - TransparentFX

@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meleeRange: {fileID: 7429417635030941648}
   currentTarget: {fileID: 0}
-  wVars: {fileID: 11400000, guid: 3fea2014918ab8940aaccd58451e6b10, type: 2}
+  wVars: {fileID: 11400000, guid: 1b3f5caa1e2c70c4188162abe4b663c5, type: 2}
   animator: {fileID: 3014082820887525906}
 --- !u!1 &781833425458692352
 GameObject:
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meleeRange: {fileID: 7899780132422958615}
   currentTarget: {fileID: 0}
-  wVars: {fileID: 11400000, guid: 2a1ce73372c46334aa860cf8deefbd22, type: 2}
+  wVars: {fileID: 11400000, guid: 8ff72d7a46a17bb4dac6f3822e645f17, type: 2}
   animator: {fileID: 125650011816170765}
 --- !u!1 &4191550370442307250
 GameObject:
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meleeRange: {fileID: 4830985373701924967}
   currentTarget: {fileID: 0}
-  wVars: {fileID: 11400000, guid: fe8994f2abe8d224380c276790a50824, type: 2}
+  wVars: {fileID: 11400000, guid: 0792432d64246c243995fae5d06fd696, type: 2}
   animator: {fileID: 7311009227758395878}
 --- !u!1 &5672928310891334349
 GameObject:
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meleeRange: {fileID: 4191550370442307250}
   currentTarget: {fileID: 0}
-  wVars: {fileID: 11400000, guid: a76e44cd47d70cc4facc605a9d058ed4, type: 2}
+  wVars: {fileID: 11400000, guid: 234f0c6a05e9ba6458e34421e10ac223, type: 2}
   animator: {fileID: 7024971445792372194}
 --- !u!1 &7429417635030941648
 GameObject:

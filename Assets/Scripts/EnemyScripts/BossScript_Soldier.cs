@@ -20,12 +20,12 @@ public class BossScript_Soldier : BossScript
         }
         if(gameManager.minutes % 1 == 0)
         {
-            switch (gameManager.minutes)
+            switch (gameManager.seconds)
             {
                 case 0: _handgun.SetActive(true); break;
-                case 1: _shotgun.SetActive(true); break;
-                case 3: _smg.SetActive(true); break;
-                case 4: _ar.SetActive(true); break;
+                case 10: _shotgun.SetActive(true); break;
+                case 20: _smg.SetActive(true); break;
+                case 30: _ar.SetActive(true); break;
             }
         }
     }
